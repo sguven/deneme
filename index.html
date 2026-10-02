@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Serhat Guven, FRM</title>
+<meta name="description" content="Serhat Guven, FRM — traded risk professional in New York. Market risk, counterparty credit risk and internal audit, with LLM-driven audit automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a loss-distribution hero, then one full-bleed photo band per institution, then a compact ledger of education, credentials and skills. */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --ink: #101a2b;
+  --muted: #56627a;
+  --line: #d9dee8;
+  --accent: #b8661c;
+  --accent-soft: #f4e3d1;
+  --tail: #b8661c;
+  --curve: #1d3a66;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --wrap: 72rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1320; --surface: #131c2c; --ink: #e8ecf3; --muted: #9aa6bc;
+    --line: #26324a; --accent: #e39a52; --accent-soft: #3a2a1a; --tail: #e39a52; --curve: #8fb3ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1320; --surface: #131c2c; --ink: #e8ecf3; --muted: #9aa6bc;
+  --line: #26324a; --accent: #e39a52; --accent-soft: #3a2a1a; --tail: #e39a52; --curve: #8fb3ea;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 1rem/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+.label {
+  font: 500 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+
+/* Nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+.nav .mark { font: 800 1rem/1 var(--display); text-decoration: none; letter-spacing: -.01em; }
+.nav ul { display: flex; gap: clamp(.8rem, 2.5vw, 1.8rem); list-style: none; margin: 0; padding: 0; }
+.nav ul a { font: 500 .78rem/1 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); text-decoration: none; }
+.nav ul a:hover { color: var(--accent); }
+@media (max-width: 560px) { .nav ul li.opt { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: end; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+.hero h1 { font-weight: 800; font-size: clamp(2.8rem, 8vw, 5.6rem); line-height: .92; letter-spacing: -.035em; }
+.hero h1 .frm {
+  display: inline-block; font: 500 .28em/1 var(--mono); letter-spacing: .08em; vertical-align: top;
+  color: var(--accent); border: 1.5px solid var(--accent); padding: .35em .5em; margin-left: .3em; margin-top: .4em; border-radius: 3px;
+}
+.hero .role { font: 600 clamp(1.05rem, 2.2vw, 1.3rem)/1.35 var(--display); margin: 1.4rem 0 1rem; max-width: 34ch; }
+.hero .summary { color: var(--muted); max-width: 60ch; margin: 0; }
+.contact { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.8rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .85rem;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  font: 500 .82rem/1 var(--mono); text-decoration: none; color: var(--ink); cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip svg { width: 15px; height: 15px; flex: none; }
+
+.dist { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.2rem 1.2rem .9rem; }
+.dist canvas { width: 100%; height: 220px; display: block; }
+.dist .cap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: .6rem; }
+.dist .cap span { font: 400 .72rem/1.4 var(--mono); color: var(--muted); }
+.dist .cap b { color: var(--accent); font-weight: 500; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.stats div { padding: 1.2rem 1rem 1.2rem 0; }
+.stats div + div { border-left: 1px solid var(--line); padding-left: 1rem; }
+.stats strong { display: block; font: 800 clamp(1.6rem, 3.6vw, 2.4rem)/1 var(--display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stats span { font-size: .82rem; color: var(--muted); }
+@media (max-width: 620px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats div:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+  .stats div:nth-child(4) { border-top: 1px solid var(--line); }
+}
+
+/* Section heads */
+.sec { padding-block: clamp(3rem, 7vw, 5rem) 0; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.sec-head h2 { font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.025em; }
+
+/* Institution bands */
+.inst { display: grid; gap: clamp(2.5rem, 6vw, 4.5rem); }
+.org {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+.org:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.org:nth-child(even) .photo { order: 2; }
+@media (max-width: 860px) {
+  .org, .org:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .org:nth-child(even) .photo { order: 0; }
+}
+.photo {
+  position: relative; margin: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%;
+  background: var(--fallback, linear-gradient(160deg, #1d3a66, #0c1320));
+  position: sticky; top: 5rem;
+}
+@media (max-width: 860px) { .photo { position: relative; top: 0; aspect-ratio: 16 / 10; } }
+.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.org:hover .photo img { transform: scale(1.03); }
+.photo .fallback {
+  position: absolute; inset: 0; display: grid; place-items: end start; padding: 1.4rem;
+  color: #fff; font: 800 clamp(1.6rem, 4vw, 2.4rem)/1 var(--display); letter-spacing: -.02em;
+}
+.photo img + .fallback { display: none; }
+.photo.no-img .fallback { display: grid; }
+.photo.no-img img { display: none; }
+.photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 2.5rem 1.1rem .9rem;
+  background: linear-gradient(transparent, rgba(6, 10, 18, .78));
+  color: #f1f3f7; font: 400 .72rem/1.4 var(--mono); letter-spacing: .04em;
+  display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap;
+}
+.photo.no-img figcaption { background: none; padding-top: .9rem; top: 0; bottom: auto; }
+.photo figcaption a { color: inherit; opacity: .75; }
+
+.org-body { min-width: 0; }
+.org-name { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+.org-name h3 { font-weight: 800; font-size: clamp(1.7rem, 3.4vw, 2.3rem); letter-spacing: -.025em; }
+.org-name .city { font: 500 .78rem/1 var(--mono); color: var(--muted); letter-spacing: .06em; }
+.post { border-top: 1px solid var(--line); padding-top: 1.2rem; margin-top: 1.2rem; }
+.post-head { display: flex; justify-content: space-between; align-items: baseline; gap: .4rem 1rem; flex-wrap: wrap; }
+.post-head h4 { margin: 0; font: 600 1.05rem/1.35 var(--body); }
+.post-head time { font: 500 .78rem/1 var(--mono); color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.post .desk { color: var(--muted); font-size: .9rem; margin: .25rem 0 .8rem; }
+.post ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .65rem; }
+.post li { position: relative; padding-left: 1.2rem; max-width: 68ch; }
+.post li::before { content: ""; position: absolute; left: 0; top: .72em; width: .5rem; height: 1.5px; background: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+.tag { font: 500 .7rem/1 var(--mono); letter-spacing: .05em; padding: .4rem .55rem; border-radius: 3px; background: var(--accent-soft); color: var(--ink); }
+
+/* Ledger: certs, skills, interests */
+.ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+@media (max-width: 860px) { .ledger { grid-template-columns: minmax(0, 1fr); } }
+.cell { background: var(--surface); padding: 1.5rem; min-width: 0; }
+.cell h3 { font-weight: 600; font-size: 1.15rem; margin: .7rem 0 1rem; }
+.cell dl { margin: 0; display: grid; gap: .9rem; }
+.cell dt { font-weight: 600; font-size: .95rem; }
+.cell dd { margin: .1rem 0 0; color: var(--muted); font-size: .88rem; }
+.cell dd .yr { font-family: var(--mono); color: var(--accent); font-size: .8rem; }
+
+.frm-badge {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: center;
+  padding: 1rem; border: 1.5px solid var(--accent); border-radius: 6px; margin-bottom: 1rem;
+}
+.frm-badge .seal {
+  width: 3.4rem; height: 3.4rem; border-radius: 50%; border: 1.5px solid var(--accent); display: grid; place-items: center;
+  font: 800 .95rem/1 var(--display); color: var(--accent);
+}
+.frm-badge p { margin: 0; font-size: .88rem; color: var(--muted); }
+.frm-badge strong { display: block; color: var(--ink); font-size: .95rem; }
+
+/* Bridge interest line */
+.suits { font-family: var(--mono); letter-spacing: .3em; color: var(--accent); }
+
+footer { margin-top: clamp(4rem, 8vw, 6rem); border-top: 1px solid var(--line); padding-block: 2rem 3rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; }
+footer p { margin: 0; font: 400 .74rem/1.6 var(--mono); color: var(--muted); max-width: 70ch; }
+footer a { color: var(--muted); }
+
+.toast { position: fixed; left: 50%; bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); font: 500 .8rem/1 var(--mono); padding: .7rem 1rem; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="mark" href="#top">S. Guven</a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li class="opt"><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="label">Traded Risk &middot; New York, NY</p>
+        <h1>Serhat<br>Guven<span class="frm">FRM</span></h1>
+        <p class="role">Internal Audit AVP at Barclays covering market risk, counterparty credit risk and credit risk.</p>
+        <p class="summary">Six years across market risk, CCR and internal audit at global and regional banks. I audit and manage VaR, sensitivity and stress testing frameworks, counterparty exposure measurement and liquidity risk, with specialist coverage of securitized products. I pair Python and SQL analytics with LLM agents that automate audit planning, testing, evidence collection and documentation.</p>
+        <div class="contact" id="contact">
+          <button class="chip" type="button" data-copy="serhatguven016@gmail.com" aria-label="Copy email address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            serhatguven016@gmail.com
+          </button>
+          <a class="chip" href="https://linkedin.com/in/serhat35" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3zM10 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>
+            in/serhat35
+          </a>
+          <a class="chip" href="https://github.com/sguven" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+            sguven
+          </a>
+        </div>
+      </div>
+
+      <figure class="dist" style="margin:0" aria-label="Illustrative daily P&amp;L distribution with the 99% VaR tail shaded">
+        <p class="label" style="margin:0 0 .6rem">Daily P&amp;L distribution &middot; illustrative</p>
+        <canvas id="var" role="img" aria-label="Bell-shaped P&amp;L distribution with the worst 1% of outcomes shaded as the 99% Value at Risk tail"></canvas>
+        <figcaption class="cap">
+          <span><b>&#9632;</b> 99% one-day VaR tail</span>
+          <span>losses &larr; &nbsp; P&amp;L &nbsp; &rarr; gains</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="stats">
+      <div><strong>6 yrs</strong><span>Market risk, CCR, audit</span></div>
+      <div><strong>3</strong><span>Lines of defense covered</span></div>
+      <div><strong>2</strong><span>Banks, New York &amp; Istanbul</span></div>
+      <div><strong>FRM</strong><span>GARP certified, 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <span class="label">2019 &ndash; Present</span>
+      </div>
+
+      <div class="inst">
+        <!-- Barclays -->
+        <article class="org">
+          <figure class="photo" style="--fallback: linear-gradient(160deg, #0f4c81, #08223f)">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barclays_-_NYC_Headquarters_(48105882878).jpg?width=1200"
+                 alt="Barclays US headquarters at 745 Seventh Avenue, Manhattan" loading="lazy" referrerpolicy="no-referrer">
+            <div class="fallback">Barclays<br>New York</div>
+            <figcaption><span>745 Seventh Ave &middot; Manhattan</span><a href="https://commons.wikimedia.org/wiki/File:Barclays_-_NYC_Headquarters_(48105882878).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+          </figure>
+          <div class="org-body">
+            <div class="org-name"><h3>Barclays</h3><span class="city">NEW YORK, NY</span></div>
+            <div class="post">
+              <div class="post-head">
+                <h4>Internal Auditor, Assistant Vice President</h4>
+                <time datetime="2023-01">Jan 2023 &ndash; Present</time>
+              </div>
+              <p class="desk">Traded Risk &middot; Market Risk, CCR, Credit Risk</p>
+              <ul>
+                <li>Test the design and operating effectiveness of controls across market risk, counterparty credit risk and credit risk, evaluating risk identification, measurement and governance against audit methodology and three-lines-of-defense expectations.</li>
+                <li>Review VaR and sensitivity-based methodologies, backtesting results and stress testing frameworks (scenario design, calibration, governance), plus risk factor mapping, trading book completeness, model inputs, data integrity and front-office-to-risk data lineage.</li>
+                <li>Specialize in securitized products: RMBS, CMBS, CRE and warehouse financing, covering valuation, exposure measurement and collateral controls.</li>
+                <li>Design and deploy LLM-based agents on firm-approved AI platforms to accelerate audit planning and scoping: policy, regulatory and prior-issue review, mapping risks to the control library, and aligning objectives with the Audit Risk Appetite.</li>
+                <li>Build agentic Python workflows for population completeness checks, risk-based sample selection and exception triage across large trade, position and risk factor datasets, with AI-assisted analysis reviewed before auditor sign-off.</li>
+                <li>Automate evidence request management and workpaper documentation, drafting testing narratives, issue write-ups and issue validation support for reviewer approval.</li>
+              </ul>
+              <div class="tags"><span class="tag">VaR</span><span class="tag">Backtesting</span><span class="tag">Stress testing</span><span class="tag">RMBS / CMBS</span><span class="tag">LLM agents</span><span class="tag">Python</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- QNB Finansbank -->
+        <article class="org">
+          <figure class="photo" style="--fallback: linear-gradient(160deg, #6b1f4a, #2a0c1e)">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/QNB_Finansbank_Kristal_Kule_2.jpg?width=1200"
+                 alt="QNB Finansbank headquarters, Kristal Kule, Istanbul" loading="lazy" referrerpolicy="no-referrer">
+            <div class="fallback">QNB Finansbank<br>Istanbul</div>
+            <figcaption><span>Kristal Kule &middot; Istanbul</span><a href="https://commons.wikimedia.org/wiki/File:QNB_Finansbank_Kristal_Kule_2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+          </figure>
+          <div class="org-body">
+            <div class="org-name"><h3>QNB Finansbank</h3><span class="city">ISTANBUL, TURKEY</span></div>
+            <div class="post">
+              <div class="post-head">
+                <h4>Treasury Dealer</h4>
+                <time datetime="2021-05">May 2021 &ndash; Sep 2021</time>
+              </div>
+              <p class="desk">Money Markets and Liquidity Management Desk</p>
+              <ul>
+                <li>Managed short-term liquidity through money market trades, cross-currency swaps and repo transactions.</li>
+                <li>Monitored counterparty exposures against regulatory and internal limits.</li>
+                <li>Built liquidity projections, forecasting cash flows and flagging potential funding gaps.</li>
+              </ul>
+            </div>
+            <div class="post">
+              <div class="post-head">
+                <h4>Market Risk Manager</h4>
+                <time datetime="2019-05">May 2019 &ndash; May 2021</time>
+              </div>
+              <p class="desk">Market Risk Management</p>
+              <ul>
+                <li>Calculated and monitored VaR, Liquidity Creation Capacity Ratio (LCCR) and counterparty credit exposures against regulatory and internal limits.</li>
+                <li>Led the design and implementation of ICAAP stress testing scenarios for market and liquidity risk.</li>
+                <li>Developed and maintained VaR models and automated recurring risk processes in Python, SQL and VBA.</li>
+                <li>Produced Early Warning Indicator reporting that flagged emerging risk concentrations.</li>
+                <li>Built behavioral models for core deposits, deposit concentration and prepayment ratios, and delivered pre-trade assessments of VaR impact.</li>
+              </ul>
+              <div class="tags"><span class="tag">ICAAP</span><span class="tag">LCCR</span><span class="tag">Repo &amp; CCS</span><span class="tag">EWI</span><span class="tag">SQL / VBA</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="education">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Education</h2>
+        <span class="label">2015 &ndash; 2019</span>
+      </div>
+      <div class="inst">
+        <article class="org">
+          <figure class="photo" style="--fallback: linear-gradient(160deg, #2c6e8f, #0d2a3a)">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bo%C4%9Fazi%C3%A7i_%C3%9Cniversitesi_G%C3%BCney_kap%C4%B1s%C4%B1.JPG?width=1200"
+                 alt="South Gate of Boğaziçi University, Istanbul" loading="lazy" referrerpolicy="no-referrer">
+            <div class="fallback">Bo&#287;azi&ccedil;i<br>University</div>
+            <figcaption><span>South Campus gate &middot; Bebek</span><a href="https://commons.wikimedia.org/wiki/File:Bo%C4%9Fazi%C3%A7i_%C3%9Cniversitesi_G%C3%BCney_kap%C4%B1s%C4%B1.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+          </figure>
+          <div class="org-body">
+            <div class="org-name"><h3>Bo&#287;azi&ccedil;i University</h3><span class="city">ISTANBUL, TURKEY</span></div>
+            <div class="post">
+              <div class="post-head">
+                <h4>M.S. in Financial Engineering</h4>
+                <time datetime="2019">2019</time>
+              </div>
+              <p class="desk">Withdrew due to COVID-19</p>
+            </div>
+            <div class="post">
+              <div class="post-head">
+                <h4>B.A. in Political Science and International Relations</h4>
+                <time datetime="2015">2015 &ndash; 2019</time>
+              </div>
+              <p class="desk">High Honors &middot; Minors in Economics and Film Studies</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="credentials">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Credentials &amp; tools</h2>
+      </div>
+      <div class="ledger">
+        <div class="cell">
+          <span class="label">Certifications</span>
+          <h3>Credentials</h3>
+          <div class="frm-badge">
+            <div class="seal">FRM</div>
+            <p><strong>Financial Risk Manager</strong>Global Association of Risk Professionals (GARP) &middot; Sep 2026</p>
+          </div>
+          <dl>
+            <div><dt>Professional Photographer Certificate</dt><dd>New York Institute of Photography &middot; <span class="yr">2024</span></dd></div>
+            <div><dt>Sustainable Development Certificate</dt><dd>Bo&#287;azi&ccedil;i University &middot; <span class="yr">2019</span></dd></div>
+          </dl>
+        </div>
+        <div class="cell">
+          <span class="label">Technical skills</span>
+          <h3>Toolkit</h3>
+          <dl>
+            <div><dt>Programming &amp; analytics</dt><dd>Python (pandas, NumPy), SQL, VBA / Excel macros</dd></div>
+            <div><dt>AI &amp; automation</dt><dd>Claude, ChatGPT, Gemini, GitHub Copilot; LLM agent development, retrieval-augmented generation (RAG), AI-assisted code and document review</dd></div>
+            <div><dt>Platforms</dt><dd>Bloomberg Terminal, Refinitiv Eikon, Microsoft Office</dd></div>
+          </dl>
+        </div>
+        <div class="cell">
+          <span class="label">Outside work</span>
+          <h3>Interests</h3>
+          <dl>
+            <div><dt>Photography</dt><dd>Certified through the New York Institute of Photography</dd></div>
+            <div><dt>Film analysis</dt><dd>Minor in Film Studies at Bo&#287;azi&ccedil;i</dd></div>
+            <div><dt>Bridge <span class="suits" aria-hidden="true">&spades;&hearts;&diams;&clubs;</span></dt><dd>Licensed member of the Istanbul Bridge Club</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Serhat Guven, FRM &middot; New York, NY</p>
+    <p>Photos via Wikimedia Commons under their respective licenses; follow each caption link for author and license details. The P&amp;L chart is illustrative.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+// Show the institution's name on a colored panel if its photo can't load.
+document.querySelectorAll('.photo img').forEach(function (img) {
+  var mark = function () { img.closest('.photo').classList.add('no-img'); };
+  if (img.complete && img.naturalWidth === 0) mark();
+  img.addEventListener('error', mark);
+});
+
+// Copy email button
+var toast = document.getElementById('toast');
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-copy');
+    var done = function (msg) {
+      toast.textContent = msg; toast.hidden = false;
+      clearTimeout(toast._t); toast._t = setTimeout(function () { toast.hidden = true; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done('Email copied'); }, function () { done(text); });
+    } else { done(text); }
+  });
+});
+
+// Illustrative P&L distribution with the 99% VaR tail shaded.
+(function () {
+  var c = document.getElementById('var');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  function pdf(x) { // Student-t, 4 dof: fat tails, as real P&L tends to have
+    var v = 4; return Math.pow(1 + x * x / v, -(v + 1) / 2);
+  }
+  var q = -3.747; // 1% quantile of t(4)
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(progress) {
+    var dpr = window.devicePixelRatio || 1;
+    var w = c.clientWidth, h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    var pad = { l: 8, r: 8, t: 22, b: 22 };
+    var xmin = -6, xmax = 6, ymax = pdf(0) * 1.05;
+    var X = function (x) { return pad.l + (x - xmin) / (xmax - xmin) * (w - pad.l - pad.r); };
+    var Y = function (y) { return h - pad.b - y / ymax * (h - pad.t - pad.b) * progress; };
+    var line = css('--line'), curve = css('--curve'), tail = css('--tail'), muted = css('--muted');
+
+    // baseline + zero tick
+    ctx.strokeStyle = line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.l, h - pad.b + .5); ctx.lineTo(w - pad.r, h - pad.b + .5); ctx.stroke();
+    ctx.setLineDash([3, 4]);
+    ctx.beginPath(); ctx.moveTo(X(0) + .5, pad.t); ctx.lineTo(X(0) + .5, h - pad.b); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // body fill
+    ctx.beginPath(); ctx.moveTo(X(xmin), Y(0));
+    for (var x = xmin; x <= xmax; x += 0.05) ctx.lineTo(X(x), Y(pdf(x)));
+    ctx.lineTo(X(xmax), Y(0)); ctx.closePath();
+    ctx.globalAlpha = .12; ctx.fillStyle = curve; ctx.fill(); ctx.globalAlpha = 1;
+
+    // tail fill
+    ctx.beginPath(); ctx.moveTo(X(xmin), Y(0));
+    for (x = xmin; x <= q; x += 0.02) ctx.lineTo(X(x), Y(pdf(x)));
+    ctx.lineTo(X(q), Y(pdf(q))); ctx.lineTo(X(q), Y(0)); ctx.closePath();
+    ctx.fillStyle = tail; ctx.fill();
+
+    // curve
+    ctx.beginPath();
+    for (x = xmin; x <= xmax; x += 0.05) { var px = X(x), py = Y(pdf(x)); x === xmin ? ctx.moveTo(px, py) : ctx.lineTo(px, py); }
+    ctx.strokeStyle = curve; ctx.lineWidth = 2; ctx.stroke();
+
+    // VaR marker
+    ctx.strokeStyle = tail; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(X(q) + .5, h - pad.b); ctx.lineTo(X(q) + .5, pad.t + 6); ctx.stroke();
+    ctx.fillStyle = tail; ctx.font = '500 11px "IBM Plex Mono", monospace'; ctx.textAlign = 'left';
+    ctx.fillText('VaR 99%', X(q) + 6, pad.t + 12);
+    ctx.fillStyle = muted; ctx.textAlign = 'center';
+    ctx.fillText('0', X(0), h - 6);
+  }
+  var t0 = null;
+  function frame(ts) {
+    if (t0 === null) t0 = ts;
+    var p = Math.min(1, (ts - t0) / 900);
+    draw(0.25 + 0.75 * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(frame);
+  }
+  if (reduce) draw(1); else requestAnimationFrame(frame);
+  window.addEventListener('resize', function () { draw(1); });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { draw(1); });
+})();
+</script>
+</body>
+</html>
